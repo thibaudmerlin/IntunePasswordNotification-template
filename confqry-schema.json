@@ -1,0 +1,232 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1668776755.json", 
+	"title": "Root", 
+	"type": "object",
+	"required": [
+		"expirationPeriod",
+		"notificationPeriod",
+		"texts",
+		"images"
+	],
+	"properties": {
+		"expirationPeriod": {
+			"$id": "#root/expirationPeriod", 
+			"title": "Expirationperiod", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"90"
+			],
+			"pattern": "^.*$"
+		},
+		"notificationPeriod": {
+			"$id": "#root/notificationPeriod", 
+			"title": "Notificationperiod", 
+			"type": "string",
+			"default": "",
+			"examples": [
+				"15"
+			],
+			"pattern": "^.*$"
+		},
+		"texts": {
+			"$id": "#root/texts", 
+			"title": "Texts", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/texts/items", 
+				"title": "Items", 
+				"type": "object",
+				"required": [
+					"headerText",
+					"titleText",
+					"bodyText1start",
+					"bodyText1end",
+					"bodyText1Altstart",
+					"bodyText1Altend",
+					"bodyText2",
+					"bodyText3",
+					"attributionText",
+					"actionButtonContent",
+					"dismissButtonContent",
+					"actionUrl"
+				],
+				"properties": {
+					"headerText": {
+						"$id": "#root/texts/items/headerText", 
+						"title": "Headertext", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Test Company Ltd"
+						],
+						"pattern": "^.*$"
+					},
+					"titleText": {
+						"$id": "#root/texts/items/titleText", 
+						"title": "Titletext", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Password Expiration Notice"
+						],
+						"pattern": "^.*$"
+					},
+					"bodyText1start": {
+						"$id": "#root/texts/items/bodyText1start", 
+						"title": "Bodytext1start", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Your password is about to expire in : "
+						],
+						"pattern": "^.*$"
+					},
+					"bodyText1end": {
+						"$id": "#root/texts/items/bodyText1end", 
+						"title": "Bodytext1end", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"day(s)"
+						],
+						"pattern": "^.*$"
+					},
+					"bodyText1Altstart": {
+						"$id": "#root/texts/items/bodyText1Altstart", 
+						"title": "Bodytext1altstart", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Your password is expired since : "
+						],
+						"pattern": "^.*$"
+					},
+					"bodyText1Altend": {
+						"$id": "#root/texts/items/bodyText1Altend", 
+						"title": "Bodytext1altend", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"day(s)"
+						],
+						"pattern": "^.*$"
+					},
+					"bodyText2": {
+						"$id": "#root/texts/items/bodyText2", 
+						"title": "Bodytext2", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Please change it asap, if you're not able to change it, please contact the support."
+						],
+						"pattern": "^.*$"
+					},
+					"bodyText3": {
+						"$id": "#root/texts/items/bodyText3", 
+						"title": "Bodytext3", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Your password last change : "
+						],
+						"pattern": "^.*$"
+					},
+					"attributionText": {
+						"$id": "#root/texts/items/attributionText", 
+						"title": "Attributiontext", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Information"
+						],
+						"pattern": "^.*$"
+					},
+					"actionButtonContent": {
+						"$id": "#root/texts/items/actionButtonContent", 
+						"title": "Actionbuttoncontent", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Change password"
+						],
+						"pattern": "^.*$"
+					},
+					"dismissButtonContent": {
+						"$id": "#root/texts/items/dismissButtonContent", 
+						"title": "Dismissbuttoncontent", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"Remind me"
+						],
+						"pattern": "^.*$"
+					},
+					"actionUrl": {
+						"$id": "#root/texts/items/actionUrl", 
+						"title": "Actionurl", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"https://account.activedirectory.windowsazure.com/ChangePassword.aspx"
+						],
+						"pattern": "^.*$"
+					}
+				}
+			}
+
+		},
+		"images": {
+			"$id": "#root/images", 
+			"title": "Images", 
+			"type": "array",
+			"default": [],
+			"items":{
+				"$id": "#root/images/items", 
+				"title": "Items", 
+				"type": "object",
+				"required": [
+					"heroImgW10",
+					"heroImgW11",
+					"logoImg"
+				],
+				"properties": {
+					"heroImgW10": {
+						"$id": "#root/images/items/heroImgW10", 
+						"title": "Heroimgw10", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"C:\\Windows\\Web\\Wallpaper\\Theme1\\img1.jpg"
+						],
+						"pattern": "^.*$"
+					},
+					"heroImgW11": {
+						"$id": "#root/images/items/heroImgW11", 
+						"title": "Heroimgw11", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							"C:\\Windows\\Web\\Wallpaper\\Windows\\img19.jpg"
+						],
+						"pattern": "^.*$"
+					},
+					"logoImg": {
+						"$id": "#root/images/items/logoImg", 
+						"title": "Logoimg", 
+						"type": "string",
+						"default": "",
+						"examples": [
+							""
+						],
+						"pattern": "^.*$"
+					}
+				}
+			}
+
+		}
+	}
+}
