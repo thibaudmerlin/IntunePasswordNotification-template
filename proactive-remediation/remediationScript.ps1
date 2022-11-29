@@ -227,4 +227,7 @@ Start-Transcript -Path $logFile -Force
         Exit 0
     }
 }
+Write-Host "Password Expiration Notification completed successfully."
+Stop-Transcript
+Exit 0
 #endregion
