@@ -39,7 +39,7 @@ Start-Transcript -Path $logFile -Force
         Stop-Transcript
         Exit 1
     }
-    elseif ($TimeSpan.Days -le 0) {
+    elseif ($TimeSpan -le 0) {
         $TimeSpan = $TimeSpan -replace "-",""
         Write-Output "Password Expired since $TimeSpan days"
         Stop-Transcript
