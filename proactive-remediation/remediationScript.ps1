@@ -87,10 +87,10 @@ Start-Transcript -Path $logFile -Force
     $WindowsPushNotificationsEnabled = Test-WindowsPushNotificationsEnabled
     if ($WindowsPushNotificationsEnabled -eq $False) {
 		Write-Output "Aborting script"
-		$errorOccurred = "The user is System, aborting script "
+		$errorOccurred = "Windows push notification disabled, aborting script "
         Exit 1
 	}
-    try {
+
     #region Get parameters and user pw timespan
     $fParams = @{
         Method      = 'Get'
@@ -102,9 +102,14 @@ Start-Transcript -Path $logFile -Force
     #region parse json
     $lastpasswordChange = $json.lastpasswordChange
     $timeSpan = $json.TimeSpan
-    $expirationPeriod = $json.expirationPeriod
+    $NotifPeriod = $json.notificationPeriod
     $texts = $json.texts
     $images = $json.images
+	If (($TimeSpan -gt $NotifPeriod)) {
+        Write-Output "Aborting Script"
+        Stop-Transcript
+        Exit 1
+    }
     #endregion
     #region check OS version
     $RunningOS = Get-CimInstance -Class Win32_OperatingSystem | Select-Object BuildNumber
@@ -165,7 +170,7 @@ Start-Transcript -Path $logFile -Force
  
 	
 	$Scenario = "Reminder"
-		
+	try {	
 	# Formatting the toast notification XML
 	# Create the default toast notification XML with action button and dismiss button
 	[xml]$Toast = @"
@@ -216,7 +221,7 @@ Start-Transcript -Path $logFile -Force
         Write-Warning "Password Expiration Notification completed with errors."
         Stop-Transcript
         Throw $errorOccurred
-        Exit 1
+        Exit 0
     }
     else {
         Write-Host "Password Expiration Notification completed successfully."
