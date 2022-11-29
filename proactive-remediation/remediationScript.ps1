@@ -80,14 +80,12 @@ Start-Transcript -Path $logFile -Force
 #region Remediation script
     $isSystem = Test-NTSystem
 	if ($isSystem -eq $True) {
-		Write-Output "Aborting script"
-		$errorOccurred = "The user is System, aborting script "
+		Write-Output "Aborting script, The user is System"
         Exit 1
 	}
     $WindowsPushNotificationsEnabled = Test-WindowsPushNotificationsEnabled
     if ($WindowsPushNotificationsEnabled -eq $False) {
-		Write-Output "Aborting script"
-		$errorOccurred = "Windows push notification disabled, aborting script "
+		Write-Output "Aborting script, Windows push notification is disabled"
         Exit 1
 	}
 
@@ -106,7 +104,7 @@ Start-Transcript -Path $logFile -Force
     $texts = $json.texts
     $images = $json.images
 	If (($TimeSpan -gt $NotifPeriod)) {
-        Write-Output "Aborting Script"
+        Write-Output "Aborting Script, TimeSpan is greater than notification Period"
         Stop-Transcript
         Exit 1
     }
