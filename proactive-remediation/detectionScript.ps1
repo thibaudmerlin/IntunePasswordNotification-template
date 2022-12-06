@@ -4,7 +4,6 @@ $client = "Company"
 $logPath = "$ENV:ProgramData\$client\Logs"
 $logFile = "$logPath\PwNotificationDetection.log"
 $user = whoami /upn
-$errorOccurred = $null
 $funcUri = 'https://{putURIhere}'
 $UserContext = [Security.Principal.WindowsIdentity]::GetCurrent()
 $WindirTemp = Join-Path $Env:Windir -Childpath "Temp"

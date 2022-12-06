@@ -6,9 +6,9 @@
             "headerText": "Test Company Ltd",
             "titleText": "Password Expiration Notice",
             "bodyText1start": "Your password is about to expire in : ",
-            "bodyText1end": "day(s)",
+            "bodyText1end": " day(s)",
             "bodyText1Altstart": "Your password is expired since : ",
-            "bodyText1Altend": "day(s)",
+            "bodyText1Altend": " day(s)",
             "bodyText2": "Please change it asap, if you're not able to change it, please contact the support.",
             "bodyText3": "Your password last change : ",
             "attributionText": "Information",
@@ -21,7 +21,7 @@
           {
             "heroImgW10": "C:\\Windows\\Web\\Wallpaper\\Theme1\\img1.jpg",
             "heroImgW11": "C:\\Windows\\Web\\Wallpaper\\Windows\\img19.jpg",
-            "logoImg": "https://www.kyos.ch/wp-content/uploads/2021/06/Kyos_Home_Shield.png"
+            "logoImg": ""
           }
         ]
   }

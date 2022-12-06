@@ -98,7 +98,7 @@ Start-Transcript -Path $logFile -Force
     $json = Invoke-RestMethod @fParams
     #endregion
     #region parse json
-    $lastpasswordChange = $json.lastpasswordChange
+    [datetime]$lastpasswordChange = $json.lastpasswordChange
     $timeSpan = $json.TimeSpan
     $NotifPeriod = $json.notificationPeriod
     $texts = $json.texts
@@ -176,7 +176,7 @@ Start-Transcript -Path $logFile -Force
 	<visual>
 	<binding template="ToastGeneric">
 		<image placement="hero" src="$HeroImage"/>
-		<image id="1" placement="appLogoOverride" hint-crop="circle" src="$LogoImage"/>
+		<image id="1" placement="appLogoOverride" src="$LogoImage"/>
 		<text placement="attribution">$AttributionText</text>
 		<text>$HeaderText</text>
 		<group>
